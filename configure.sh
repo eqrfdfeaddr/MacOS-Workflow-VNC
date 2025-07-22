@@ -27,4 +27,4 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 
 brew install cloudflared
 
-cloudflared service install  ${{ secrets.CLOUDFLARE_TOKEN }}
+sudo cloudflared service install  $3
