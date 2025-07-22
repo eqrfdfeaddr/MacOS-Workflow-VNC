@@ -25,9 +25,6 @@ echo $2 | perl -we 'BEGIN { @k = unpack "C*", pack "H*", "1734516E8BA8C5E2FF1C39
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -console
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
 
-#install ngrok
-brew install ngrok
+brew install cloudflared
 
-#configure ngrok and start it
-ngrok config add-authtoken $3
-ngrok tcp 5900 &
+cloudflared service install  ${{ secrets.CLOUDFLARE_TOKEN }}
